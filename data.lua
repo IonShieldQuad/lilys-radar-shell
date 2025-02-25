@@ -6,7 +6,7 @@ local radar1 = {
     type = "radar",
     name = "radar-shell-dummy-radar-1",
     icon = "__base__/graphics/icons/radar.png",
-    flags = { "not-on-map"},
+    flags = { "not-on-map", "placeable-off-grid" },
     max_health = 2147483648,
     hidden = true,
     collision_box = { { 0, 0 }, { 0, 0 } },
@@ -40,7 +40,7 @@ local radar2 = {
     type = "radar",
     name = "radar-shell-dummy-radar-2",
     icon = "__base__/graphics/icons/radar.png",
-    flags = { "not-on-map"},
+    flags = { "not-on-map", "placeable-off-grid"},
     max_health = 2147483648,
     hidden = true,
     connects_to_other_radars = false,
@@ -102,6 +102,7 @@ local light1 = {
     type = "projectile",
     name = "radar-shell-dummy-light-1",
     collision_mask = { layers = {} },
+    flags = { "not-on-map", "placeable-off-grid"},
     light = {
     intensity = 0.65,
     size = 80,
@@ -121,9 +122,10 @@ local light2 = {
     type = "lamp",
     name = "radar-shell-dummy-light-2",
     collision_mask = { layers = {} },
+    flags = { "not-on-map", "placeable-off-grid"},
     light = {
-    intensity = 0.65,
-    size = 80,
+    intensity = 2.65,
+    size = 120,
     color = {
       r = 1.000,
       g = 0.888,
@@ -233,7 +235,7 @@ local shell = {
                     action =
                     {
                         type = "area",
-                        radius = 2.0,
+                        radius = 1.0,
                         action_delivery =
                         {
                             type = "instant",
