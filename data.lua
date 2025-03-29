@@ -41,12 +41,12 @@ local radar2 = {
     name = "radar-shell-dummy-radar-2",
     icon = "__base__/graphics/icons/radar.png",
     flags = { "not-on-map", "placeable-off-grid"},
-    max_health = 2147483648,
+    max_health = 10000,
     hidden = true,
     connects_to_other_radars = false,
     collision_mask = { layers = {} },
     collision_box = { { 0, 0 }, { 0, 0 } },
-    selection_box = { { 0, 0 }, { 0, 0 } },
+    selection_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },
     energy_per_sector = "10MJ",
     max_distance_of_sector_revealed = 0,
     max_distance_of_nearby_sector_revealed = settings.startup["radar_landed_range"].value,
@@ -121,6 +121,8 @@ local light1 = {
 local light2 = {
     type = "lamp",
     name = "radar-shell-dummy-light-2",
+    icon = table.deepcopy(data.raw["lamp"]["small-lamp"].icon),
+    max_health = 100000,
     collision_mask = { layers = {} },
     flags = { "not-on-map", "placeable-off-grid"},
     light = {
